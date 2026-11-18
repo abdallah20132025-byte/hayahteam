@@ -1,0 +1,13 @@
+{
+  "name": "hayahteam-cloudflare-pages",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler pages dev website",
+    "db:migrate": "wrangler d1 migrations apply hayahteam-db --remote",
+    "deploy": "wrangler pages deploy website --project-name hayahteam"
+  },
+  "devDependencies": {
+    "wrangler": "^4.0.0"
+  }
+}

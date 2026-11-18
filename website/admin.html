@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#0b0606">
+  <title>لوحة المطور | حياة تيم</title>
+  <link rel="icon" href="/admin-logo.jpeg" type="image/jpeg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/admin.css">
+  <script src="/admin.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="/" aria-label="العودة إلى الموقع">
+      <img class="brand-mark" src="/admin-logo.jpeg" alt="شعار حياة تيم">
+      <span><b>حياة تيم</b><small>مركز إدارة الموقع</small></span>
+    </a>
+    <div class="top-actions">
+      <span class="connection"><i id="connectionDot"></i><span id="connectionText">جارٍ التحقق من الاتصال</span></span>
+      <a class="button button-quiet" href="/">عرض الموقع</a>
+      <button class="button button-quiet" id="logoutButton" type="button" hidden>تسجيل الخروج</button>
+    </div>
+  </header>
+
+  <main id="loginView" class="login-wrap">
+    <section class="login-card">
+      <img class="login-symbol" src="/admin-logo.jpeg" alt="شعار حياة تيم">
+      <p class="eyebrow">مساحة خاصة بالمشرف</p>
+      <h1>لوحة المطور</h1>
+      <p class="muted">سجّل الدخول لإدارة طلبات الانضمام ومحتوى موقع حياة تيم.</p>
+      <form id="loginForm">
+        <label for="adminPassword">كلمة مرور الإدارة</label>
+        <input id="adminPassword" type="password" autocomplete="current-password" required minlength="10" placeholder="أدخل كلمة المرور الخاصة بك">
+        <button class="button button-primary full" type="submit">دخول آمن</button>
+        <p id="loginMessage" class="form-message" role="status"></p>
+      </form>
+      <p class="login-footnote">جلسة الإدارة موقعة من الخادم وتُحفظ في Cookie محمية.</p>
+    </section>
+  </main>
+
+  <div id="dashboardView" class="dashboard" hidden>
+    <aside class="sidebar">
+      <p class="side-label">الإدارة</p>
+      <button class="side-link active" type="button" data-view="overview"><span class="side-icon">⌂</span>نظرة عامة</button>
+      <button class="side-link" type="button" data-view="applications"><span class="side-icon">▤</span>طلبات التقديم <b id="newCount" class="count-badge">0</b></button>
+      <p class="side-label">إدارة الموقع</p>
+      <button class="side-link" type="button" data-view="content"><span class="side-icon">✎</span>النصوص الرئيسية</button>
+      <button class="side-link" type="button" data-view="stories"><span class="side-icon">✦</span>الإنجازات والأخبار</button>
+      <button class="side-link" type="button" data-view="media"><span class="side-icon">▧</span>الصور والشعار</button>
+      <button class="side-link" type="button" data-view="links"><span class="side-icon">↗</span>الروابط والتواصل</button>
+      <div class="sidebar-note"><b>حفظ تلقائي</b><span>تُحفظ التغييرات للموقع مباشرةً عند الاتصال بقاعدة البيانات.</span></div>
+    </aside>
+    <main class="workspace">
+      <div class="page-heading">
+        <div><p class="eyebrow">حياة تيم <span class="slash">/</span> <span id="breadcrumb">نظرة عامة</span></p><h1 id="pageTitle">نظرة عامة</h1></div>
+        <button class="button button-primary" id="saveButton" type="button">حفظ التغييرات</button>
+      </div>
+      <div id="saveStatus" class="save-status" role="status">جاهز</div>
+      <section id="panel" aria-live="polite"></section>
+    </main>
+  </div>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+</body>
+</html>

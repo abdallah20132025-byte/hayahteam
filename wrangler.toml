@@ -1,0 +1,13 @@
+name = "hayahteam"
+compatibility_date = "2026-11-18"
+pages_build_output_dir = "website"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "hayah-team-db"
+database_id = "a34920fe-787d-468c-b867-0019fad5e224"
+migrations_dir = "migrations"
+
+[vars]
+ADMIN_PASSWORD = "Team-Hayah@2027"
+ADMIN_SESSION_SECRET = "uS-BZxFrYP1A_4XY-69Zwy_cjAfuVM6f8RqC69_e5cGTd5JshIe6uwkye4Er42oy"
